@@ -1,8 +1,8 @@
 // Get elements from the DOM
-const menuBtn = document.querySelector('.menu-btn');
-const menu = document.querySelector('.menu-container');
-const dropdowns = document.querySelectorAll('.dropdown > div');
-const subDropdowns = document.querySelectorAll('.sub-dropdown > div');
+const menuBtn = document.querySelector('.mega-menu-mobile-btn');
+const menu = document.querySelector('.mega-menu-container');
+const dropdowns = document.querySelectorAll('.mega-menu-dropdown > div');
+const subDropdowns = document.querySelectorAll('.mega-menu-sub-dropdown > div');
 
 // Toggle variable
 let menuOpen = false;
@@ -39,7 +39,7 @@ dropdowns.forEach(dropdown=>{
     // Add click event
     dropdown.addEventListener("click", (e)=>{
         // Toggle dropdown menu show class
-        dropdown.nextElementSibling.classList.toggle('menu-show');
+        dropdown.nextElementSibling.classList.toggle('mega-menu-item-show');
         // Toggle icon rotated class
         dropdown.lastElementChild.classList.toggle('icon-rotated');
     });
@@ -50,34 +50,10 @@ subDropdowns.forEach(subDropdown=>{
     // Add click event
     subDropdown.addEventListener('click', (e)=>{
         // Toggle sub dropdown menu show class
-        subDropdown.nextElementSibling.classList.toggle('sub-menu-show');
+        subDropdown.nextElementSibling.classList.toggle('mega-menu-sub-menu-show');
         // Toggle icon rotated class
         subDropdown.lastElementChild.classList.toggle('icon-rotated');
     });
 });
 
-
-// disabling inspect element
-document.addEventListener("contextmenu", function(e){
-    e.preventDefault(); //this prevents right click
-});
-document.onkeydown=function(e){
-    if(event.keycode==123){
-        return false;
-    }
-    if(e.ctrlKey && e.shiftKey && e.keyCode=="I".charCodeAt(0)){
-        return false;
-    }
-    if(e.ctrlKey && e.shiftKey && e.keyCode=="C".charCodeAt(0)){
-        return false;
-    }
-    if(e.ctrlKey && e.shiftKey && e.keyCode=="J".charCodeAt(0)){
-        return false;
-    }
-    if(e.ctrlKey && e.keyCode=="U".charCodeAt(0)){
-        return false;
-    }
-    if(e.ctrlKey && e.keyCode=="S".charCodeAt(0)){
-        return false;
-    }
-};
+ 
